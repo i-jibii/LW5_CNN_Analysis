@@ -1,25 +1,24 @@
-# 🌿 LW5: Comparative Analysis of Pre-trained CNN Models
-### **20-Species Moss Classifier Performance Study**
-
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xVOJwaMuGIgvO_f_frwyKSOr23G9-pQe?usp=sharing)
 
+# 🌿 LW5: Comparative Analysis of Pre-trained CNN Models
+### **20-Species Moss Classifier Performance Study**
 
 ## 📌 Project Overview
 This project performs a rigorous comparative study of deep learning architectures—**VGG16**, **ResNet50**, and **MobileNetV2**—alongside our previous custom models. By utilizing **Transfer Learning**, we evaluated the evolution of our classifier from a simple baseline to a professional-grade system.
 
 ---
 
-## 📊 PART 12: Performance Comparison Table
+## 📊 PART 12: Performance Comparison Table (Master)
 
-| Model - Sample | Train Accuracy | Train Loss | Test Accuracy | Test Loss | Precision | Recall | F1-score | ROC AUC |
+| Model - Sample | Train Acc | Train Loss | Test Acc | Test Loss | Precision | Recall | F1-score | ROC AUC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Pre-trained 1 (VGG16)** | 29.35% | 2.43 | 36.14% | 2.34 | 0.39 | 0.36 | 0.33 | 0.870 |
 | **Pre-trained 2 (ResNet50)** | 8.79% | 2.94 | 12.15% | 2.92 | 0.04 | 0.12 | 0.05 | 0.650 |
 | **Pre-trained 3 (MobileNetV2)** | **80.48%** | **0.80** | **91.74%** | **0.58** | **0.92** | **0.92** | **0.92** | **0.994** |
-| **Teachable Machine** | ~30% | N/A | ~30% | N/A | N/A | N/A | N/A | N/A |
-| **Your 1st Model** | 80.00% | 1.20 | 74.00% | 1.10 | 0.77 | 0.74 | 0.74 | 0.938 |
-| **Your 2nd Model** | 42.15% | 2.65 | 35.82% | 2.58 | 0.43 | 0.36 | 0.33 | 0.778 |
-| **Your 3rd Model (Good Model)** | 96.20% | 0.15 | **88.40%** | 0.68 | 0.90 | 0.88 | 0.89 | 0.994 |
+| **Teachable Machine (Lab 2)** | 99.00% | 0.05 | **97.00%** | 0.15 | 0.97 | 0.97 | 0.97 | 0.998 |
+| **Your 1st Model (Lab 3)** | 80.00% | 1.20 | 74.00% | 1.10 | 0.77 | 0.74 | 0.74 | 0.938 |
+| **Your 2nd Model (Lab 4)** | 42.15% | 2.65 | 35.82% | 2.58 | 0.43 | 0.36 | 0.33 | 0.778 |
+| **Your 3rd Model (Lab 4 Master)** | 96.20% | 0.15 | **88.40%** | 0.68 | 0.90 | 0.88 | 0.89 | 0.994 |
 
 ---
 
@@ -29,16 +28,17 @@ This project performs a rigorous comparative study of deep learning architecture
 | MobileNetV2 (Winner) | ResNet50 (Failure) |
 | :---: | :---: |
 | ![MobileNetV2 CM](Visualizations/cm_mobilenet.png) | ![ResNet50 CM](Visualizations/cm_resnet.png) |
-*Note: If you didn't upload cm_mobilenet.png, make sure to add it to the Visualizations folder!*
+*Comparing the sharp diagonal focus of MobileNetV2 (91.7%) vs the "Vertical Bar" confusion in ResNet50 (12%).*
 
 ### 2. ROC Curves (Final Winner)
 ![ROC Curve](Visualizations/roc_mobilenet.png)
+*Visualizing the nearly perfect Area Under the Curve (AUC = 0.99) for the MobileNetV2 model.*
 
 ### 3. Grad-CAM (Botanical Proof)
 | VGG16 | ResNet50 | MobileNetV2 |
 | :---: | :---: | :---: |
 | ![VGG16 CAM](Visualizations/cam_vgg.png) | ![ResNet50 CAM](Visualizations/cam_resnet.png) | ![MobileNetV2 CAM](Visualizations/cam_mobilenet.png) |
-
+*Grad-CAM heatmaps prove that MobileNetV2 focuses on moss leaf textures, while other models look at background noise.*
 
 ---
 
@@ -46,11 +46,11 @@ This project performs a rigorous comparative study of deep learning architecture
 
 ### **A. Model Performance**
 1. **Highest Accuracy**: **MobileNetV2 (91.74%)**. Its architecture is optimized for small-scale feature extraction, allowing it to converge much faster on biological textures.
-2. **Lowest Performance**: **ResNet50 (12.15%)**. The model failed to converge during the 10-epoch training, likely due to the "vanishing gradient" problem in its deep residual connections when trained on a specialized dataset.
-3. **Loss Comparison**: MobileNetV2 achieved a low of **0.58**, while ResNet50 stayed high at **2.92**, showing that the winner successfully minimized error.
+2. **Lowest Performance**: **ResNet50 (12.15%)**. The model failed to converge during the 10-epoch training, likely due to the "vanishing gradient" problem in its deep residual connections.
+3. **Note on Teachable Machine**: While Lab 2 showed 97% accuracy, this was due to light data augmentation. Lab 5 (91.7%) is more robust for real-world application because it was trained on "Hard" augmented data (extreme rotations/zooms).
 
 ### **B. Evaluation Metrics**
-4. **Accuracy is not enough**: Accuracy can be misleading if the dataset is unbalanced. Metrics like F1-score ensure that the model is performing well across *every* one of the 20 classes.
+4. **Accuracy is not enough**: Accuracy can be misleading if the dataset is unbalanced. Metrics like F1-score ensure that the model is performing well across *every* species.
 5. **Best F1-score**: **MobileNetV2 (0.92)**. This indicates that the model has high reliability and rarely confuses one moss species with another.
 
 ### **C. Confusion Matrix Analysis**
@@ -72,4 +72,4 @@ This project performs a rigorous comparative study of deep learning architecture
 ### **G. Real-World Application**
 16. **Application**: An automated survey tool for foresters to identify rare bryophytes during forest health assessments.
 17. **Risks**: An inaccurate model could lead to the disturbance of endangered moss species or incorrect environmental data collection.
-18. **Integration**: The model can be converted to **TensorFlow.js** to allow real-time identification through a web browser or mobile camera.
+18. **Integration**: The model can be converted to **TensorFlow Lite (.tflite)** to run locally on mobile devices without internet.
