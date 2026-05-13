@@ -38,6 +38,7 @@ This project performs a rigorous comparative study of deep learning architecture
 | VGG16 | ResNet50 | MobileNetV2 |
 | :---: | :---: | :---: |
 | ![VGG16 CAM](Visualizations/cam_vgg.png) | ![ResNet50 CAM](Visualizations/cam_resnet.png) | ![MobileNetV2 CAM](Visualizations/cam_mobilenet.png) |
+
 *Grad-CAM heatmaps prove that MobileNetV2 focuses on moss leaf textures, while other models look at background noise.*
 
 ---
