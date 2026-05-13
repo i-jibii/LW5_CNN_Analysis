@@ -1,6 +1,9 @@
 # 🌿 LW5: Comparative Analysis of Pre-trained CNN Models
 ### **20-Species Moss Classifier Performance Study**
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xVOJwaMuGIgvO_f_frwyKSOr23G9-pQe?usp=sharing)
+
+
 ## 📌 Project Overview
 This project performs a rigorous comparative study of deep learning architectures—**VGG16**, **ResNet50**, and **MobileNetV2**—alongside our previous custom models. By utilizing **Transfer Learning**, we evaluated the evolution of our classifier from a simple baseline to a professional-grade system.
 
@@ -21,11 +24,21 @@ This project performs a rigorous comparative study of deep learning architecture
 ---
 
 ## 🖼️ Visualizations
-*(Note: Replace these placeholders with your actual exported images from Colab)*
 
-1. **Confusion Matrix**: Comparing the diagonal focus of MobileNetV2 vs the confusion in ResNet50.
-2. **ROC Curves**: Visualizing the nearly perfect area under the curve for the final winner.
-3. **Grad-CAM**: Botanical proof that the model focuses on moss leaf textures.
+### 1. Confusion Matrix Comparison
+| MobileNetV2 (Winner) | ResNet50 (Failure) |
+| :---: | :---: |
+| ![MobileNetV2 CM](Visualizations/cm_mobilenet.png) | ![ResNet50 CM](Visualizations/cm_resnet.png) |
+*Note: If you didn't upload cm_mobilenet.png, make sure to add it to the Visualizations folder!*
+
+### 2. ROC Curves (Final Winner)
+![ROC Curve](Visualizations/roc_mobilenet.png)
+
+### 3. Grad-CAM (Botanical Proof)
+| VGG16 | ResNet50 | MobileNetV2 |
+| :---: | :---: | :---: |
+| ![VGG16 CAM](Visualizations/cam_vgg.png) | ![ResNet50 CAM](Visualizations/cam_resnet.png) | ![MobileNetV2 CAM](Visualizations/cam_mobilenet.png) |
+
 
 ---
 
