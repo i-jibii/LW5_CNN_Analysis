@@ -8,7 +8,7 @@ This project performs a rigorous comparative study of deep learning architecture
 
 ## 📊 PART 12: Performance Comparison Table
 
-| Model - Sample | Train Acc | Train Loss | Test Acc | Test Loss | Precision | Recall | F1-score | ROC AUC |
+| Model - Sample | Train Accuracy | Train Loss | Test Accuracy | Test Loss | Precision | Recall | F1-score | ROC AUC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Pre-trained 1 (VGG16)** | 29.35% | 2.43 | 36.14% | 2.34 | 0.39 | 0.36 | 0.33 | 0.870 |
 | **Pre-trained 2 (ResNet50)** | 8.79% | 2.94 | 12.15% | 2.92 | 0.04 | 0.12 | 0.05 | 0.650 |
