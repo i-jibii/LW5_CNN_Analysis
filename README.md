@@ -28,10 +28,12 @@ This project performs a rigorous comparative study of deep learning architecture
 | MobileNetV2 (Winner) | ResNet50 (Failure) |
 | :---: | :---: |
 | ![MobileNetV2 CM](Visualizations/cm_mobilenet.png) | ![ResNet50 CM](Visualizations/cm_resnet.png) |
+
 *Comparing the sharp diagonal focus of MobileNetV2 (91.7%) vs the "Vertical Bar" confusion in ResNet50 (12%).*
 
 ### 2. ROC Curves (Final Winner)
 ![ROC Curve](Visualizations/roc_mobilenet.png)
+
 *Visualizing the nearly perfect Area Under the Curve (AUC = 0.99) for the MobileNetV2 model.*
 
 ### 3. Grad-CAM (Botanical Proof)
